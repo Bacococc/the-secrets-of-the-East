@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/Login.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <section class="login-form">
+        <h1>ログイン</h1>
+        <form id="Login">
+            <div class="int-area">
+                <input type="text" name="id" id="id" autocomplete="off" required>
+                <label for="id">アイディー</label>
+            </div>
+            <div class="int-area">
+                <input type="password" name="pw" id="pw" autocomplete="off" required>
+                <label for="pw">パスワード</label>
+            </div>
+            <div class="btn-area">
+                <button id="btn" type="submit">ログイン</button>
+            </div>
+        </form>
+    </section>
+    <script>
+        let id = $('#id');
+        let pw = $('#pw');
+        let btn = $('#btn');
+
+        $(btn).on('click', function() {
+            if($(id).val() == "") {
+                $(id).next('label').addClass('warning');
+                setTimeout(function() {
+                    $('label').removeClass('warning');
+                },1500)
+            }
+            else if($(pw).val() == ""){
+                $(pw).next('label').addClass('warning');
+                setTimeout(function() {
+                    $('label').removeClass('warning');
+                },1500)
+            }
+            else if($(id).val() == "2401027" && $(pw).val() == "12345"){
+                $("#Login").attr("action", "https://bacococc.github.io/Osaka/").submit()
+            }
+            else if($(id).val() == "2401076" && $(pw).val() == "12345"){
+                $("#Login").attr("action", "https://bacococc.github.io/Sapporo/").submit()
+            }
+            else if($(id).val() == "2401180" && $(pw).val() == "12345"){
+                $("#Login").attr("action", "https://bacococc.github.io/Tokyo/").submit()
+            }
+            else if($(id).val() == "2401102" && $(pw).val() == "12345"){
+                $("#Login").attr("action", "https://bacococc.github.io/Kamakura/").submit()
+            }
+            else if($(id).val() == "2401029" && $(pw).val() == "12345"){
+                $("#Login").attr("action", "https://bacococc.github.io/Kyoto/").submit()
+            }
+            else if($(id).val() == "2401123" && $(pw).val() == "12345"){
+                $("#Login").attr("action", "https://bacococc.github.io/Kobe/").submit()
+            }
+            else{
+                alert("아이디와 비밀번호를 다시 확인하세요!")
+            }
+        })
+        
+    </script>
+</body>
+</html>
